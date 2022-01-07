@@ -1,7 +1,7 @@
 Forked for Lunakey changes.
 
 ## Changes
---Enable the mouse function of Lunakey.
+- Enable the mouse function of Lunakey.
 
 # Quantum Mechanical Keyboard Firmware
 
