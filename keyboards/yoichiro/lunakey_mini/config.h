@@ -20,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0x5954  // "YT" - Yoichiro Tanaka
-#define PRODUCT_ID   0x0001
-#define DEVICE_VER   0x0001
+#define VENDOR_ID 0x5954  // "YT" - Yoichiro Tanaka
+#define PRODUCT_ID 0x0001
+#define DEVICE_VER 0x0001
 #define MANUFACTURER yoichiro
-#define PRODUCT      Lunakey Mini
+#define PRODUCT Lunakey Mini
 
 /* key matrix size */
 #define MATRIX_ROWS 8
@@ -40,15 +40,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { D4, D7, E6, B4 }
-#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3 }
+#define MATRIX_ROW_PINS \
+  { D4, D7, E6, B4 }
+#define MATRIX_COL_PINS \
+  { F4, F5, F6, F7, B1, B3 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
 /*
- * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
+ * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define
+ * SOFT_SERIAL_PIN.
  */
 #define SOFT_SERIAL_PIN D2  // or D1, D2, D3, E6
 
@@ -58,18 +61,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN
-  #define RGBLED_NUM 12
-  #define RGBLIGHT_SPLIT
-  #define RGBLED_SPLIT { 6, 6 }
-  #define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, \
-                             11, 10, 9, 8, 7, 6 }
-  #define RGBLIGHT_HUE_STEP 8
-  #define RGBLIGHT_SAT_STEP 8
-  #define RGBLIGHT_VAL_STEP 8
-  #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
-  #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-/*== all animations enable ==*/
-  #define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 12
+#define RGBLIGHT_SPLIT
+#define RGBLED_SPLIT \
+  { 6, 6 }
+#define RGBLIGHT_LED_MAP \
+  { 0, 1, 2, 3, 4, 5, 11, 10, 9, 8, 7, 6 }
+#define RGBLIGHT_HUE_STEP 8
+#define RGBLIGHT_SAT_STEP 8
+#define RGBLIGHT_VAL_STEP 8
+#define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
+#define RGBLIGHT_SLEEP         /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+                               /*== all animations enable ==*/
+#define RGBLIGHT_ANIMATIONS
 /*== or choose animations ==*/
 //#    define RGBLIGHT_EFFECT_BREATHING
 //#define RGBLIGHT_EFFECT_RAINBOW_MOOD
@@ -151,3 +155,36 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration */
 //#define BOOTMAGIC_LITE_ROW 0
 //#define BOOTMAGIC_LITE_COLUMN 0
+
+// https://zenn.dev/mst_nishio/articles/e2dd64d14187b9b4de57
+// カーソルキー入力から反応までの遅延
+#undef MOUSEKEY_DELAY
+#define MOUSEKEY_DELAY 50
+
+// カーソルキー押しっぱなしの時の反応までのインターバル
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL 0
+
+// カーソルの移動スピード
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED 2
+
+// カーソル操作がトップスピードになるまでの時間
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX 50
+
+// ホイールキー入力から反応までの遅延
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_WHEEL_DELAY 50
+
+// ホイールキー押しっぱなしの時の反応までのインターバル
+#undef MOUSEKEY_WHEEL_INTERVAL
+#define MOUSEKEY_WHEEL_INTERVAL 20
+
+// ホイールの移動スピード
+#undef MOUSEKEY_WHEEL_MAX_SPEED
+#define MOUSEKEY_WHEEL_MAX_SPEED 1
+
+// ホイール操作がトップスピードになるまでの時間
+#undef MOUSEKEY_WHEEL_TIME_TO_MAX
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 100
